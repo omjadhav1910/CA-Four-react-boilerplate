@@ -1,33 +1,38 @@
 body.dark-mode {
   background-color: black;
 }
-body{
-    /* overflow: hidden; */
+
+body {
+  /* overflow: hidden; */
+  user-select: none;
+  margin: 0; /* Remove default body margin */
+  font-family: 'Arial', sans-serif; /* Specify a fallback font family */
 }
+
 .container {
-  width: 440px;
+  width: 80%; /* Use percentage for container width */
+  max-width: 600px; /* Set a maximum width for larger screens */
   margin: auto;
-  margin-top: 0px;
-  height: 32vw;
+  margin-top: 20px; /* Add some top margin */
+  padding: 20px; /* Adjust padding for smaller screens */
+  box-sizing: border-box; /* Include padding and border in the width calculation */
   background: white;
   color: #262626;
   display: flex;
   flex-direction: column;
   gap: 20px;
   border-radius: 10px;
-  padding: 40px 50px;
-  box-shadow: 0px 0px 51px 0px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.3);
 }
 
 .container hr {
   height: 2px;
-  /* border: none; */
   background: #000000;
+  margin: 0; /* Remove default hr margin */
 }
 
 .container h2 {
-    margin-top: -10px;
-  font-size: 23px;
+  font-size: 20px;
   font-weight: 500;
 }
 
@@ -39,32 +44,94 @@ body{
   border: 1px solid #686868;
   border-radius: 8px;
   margin-bottom: 20px;
-  margin-left: -30px;
-  font-size: 20px;
-  /* margin-top: -20px;  */
+  font-size: 16px;
+  cursor: pointer;
+  margin-left: -3vw;
+  width: 100%;
+}
+
+.button-div {
+  display: flex;
+  /* justify-content: space-between;   */
+  gap: 50px;
+  margin-top: 10px; 
+  margin-left: 6vw; 
+}
+
+.button-div button {
+  width: 150px;  
+  height: 50px;   
+  background: #553f9a;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
   cursor: pointer;
 }
 
-.container button{
-    margin: auto;
-
-width: 250px;
-
-height: 65px;
-
-background:#553f9a;
-
-color: #fff;
-
-font-size: 25px;
-
-font-weight: 500;
-
-border-radius: 8px;
-
-cursor: pointer;
+.container .index {
+  font-size: 30px;
+  text-align: center;
 }
-.container .index{
-    padding-left: 10vw;
-    font-size: 28px;
+ 
+
+#dark-mode {
+  width: 100px;
+  height: 40px;
+  margin-left: 46vw;
+  font-size: 16px;
+  background: #553f9a;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 10px;
 }
+@media screen and (max-width: 768px) {
+  .button-div {
+    flex-direction: column;  
+  }
+
+  .button-div button {
+    width: 100%;  
+    margin-bottom: 10px;  
+  }
+}
+ 
+@media screen and (max-width: 768px) {
+  #dark-mode {
+    width: 80px;
+    height: 30px;
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #dark-mode {
+    width: 70px;
+    height: 25px;
+    font-size: 12px;
+  }
+}
+
+
+/* Media queries for responsiveness */
+@media screen and (max-width: 768px) {
+  .container {
+    width: 90%;
+    padding: 15px;
+  }
+
+  .container h2 {
+    font-size: 18px;
+  }
+
+  .container ul li {
+    font-size: 14px;
+  }
+
+  .container .index {
+    font-size: 20px;
+  }
+}
+
+/* Add more media queries as needed */

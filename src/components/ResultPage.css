@@ -1,11 +1,79 @@
-.result-container{
+/* ResultPage.css */
+body.dark-mode {
+    background-color: black;
+  }
+  
+  body {
+    user-select: none;
+  }
+  
+  .result-container {
+    width: 50%;
     margin: auto;
-    width: 250px;
-    height: 65px;
-    background: #553f9a;
-    color: #fff;
-    font-size: 25px;
+    margin-top: 10vw;
+    background: white;
+    color: #262626;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 10px;
+    padding: 40px;
+    box-shadow: 0px 0px 51px 0px rgba(0, 0, 0, 0.3);
+  }
+  
+  .result-container hr {
+    height: 2px;
+    background: #000000;
+  }
+  
+  .result-container h1 {    
+    font-size: 23px;
     font-weight: 500;
-    border-radius: 8px;
-    cursor: pointer;
+    margin-left: 20vw;
+  }
+  
+  .result-container p {
+    font-size: 20px;
+    margin-left: 10vw;
+  }
+  
+  .result-container button {
+    width: 40%;
+    border-radius: 5px;
+    height: 50px;
+    font-size: 20px;
+    margin-left: 15vw;
+    background: #7534DF;  
+    color: #fff;
 }
+  
+  .result-container .index {
+    font-size: 24px;
+  }
+  
+  /* Media queries for responsiveness */
+  @media screen and (max-width: 768px) {
+    .result-container {
+      width: 90%;
+      padding: 15px;
+    }
+  
+    .result-container h1 {
+      font-size: 18px;
+    }
+  
+    .result-container p {
+      font-size: 16px;
+    }
+  
+    .result-container .index {
+      font-size: 20px;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .result-container {
+      padding: 20px;
+    }
+  }
+  

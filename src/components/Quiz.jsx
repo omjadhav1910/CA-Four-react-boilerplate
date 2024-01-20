@@ -9,6 +9,8 @@ const Quiz = () => {
   const [highlight, setHighlight] = useState(false);
   const [darkMode, setDarkMode] = useState(false);
   const [correctAnswers, setCorrectAnswers] = useState(0);
+  const [textColor, setTextColor] = useState("dark"); // Track text color
+
   const question = questionsData[index];
 
   const handleOptionClick = (optionId) => {
@@ -36,7 +38,10 @@ const Quiz = () => {
 
   const handleDarkModeClick = () => {
     setDarkMode(!darkMode);
-    // Toggle the "dark-mode" class on the body element
+    // Change text color on Dark button click
+    setTextColor(darkMode ? "white" : "dark");
+
+    // Ensure dark-mode class is toggled on the body element
     document.body.classList.toggle("dark-mode");
   };
 
@@ -47,15 +52,15 @@ const Quiz = () => {
   return (
     <div className={`div ${darkMode ? "dark-mode" : ""}`}>
       <div>
-        <h2 className={`quiz-title ${darkMode ? "white-text" : ""}`}>Kalvium</h2>
+        {/* <h2 className={`quiz-title ${textColor}`}>Kalvium</h2> */}
         <button id="dark-mode" onClick={handleDarkModeClick}>
-          Dark
+          {darkMode ? "Light" : "Dark"}
         </button>
       </div>
       <div className={`container ${highlight ? "highlighted" : ""}`}>
         <div className="index">{`${index + 1} of ${questionsData.length} questions`}</div>
         <hr />
-        <h2 style={{ color: highlight ? "red" : (darkMode ? "white" : "blue") }}>
+        <h2 style={{ color: highlight ? "red" : "blue" }}>
           {index + 1}. {question.text}
         </h2>
         <ul>
